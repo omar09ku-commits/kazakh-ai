@@ -1,2 +1,2 @@
-# kazakh-ai
+# til-ai
 Kazakh Artificial Intelligence
