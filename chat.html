@@ -4,7 +4,217 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Чат — Kazakh AI</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Жалпы стильдер */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+/* Header стильдері */
+header {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  font-size: 2.2rem;
+  background: linear-gradient(90deg, #fff, #e6f7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header a {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+header a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(-5px);
+}
+
+/* Негізгі бөлім */
+main {
+  flex: 1;
+  max-width: 800px;
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Чат-бокс */
+.chat-box {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  overflow-y: auto;
+  max-height: 60vh;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Хабарламалар */
+.message {
+  margin-bottom: 1.2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 18px;
+  max-width: 75%;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bot {
+  background: rgba(255, 255, 255, 0.2);
+  border-top-left-radius: 5px;
+  align-self: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Форма стильдері */
+#chat-form {
+  display: flex;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#user-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#user-input:focus {
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+#chat-form button {
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#chat-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Адаптивтік дизайн */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .chat-box {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .message {
+    max-width: 85%;
+    padding: 0.8rem 1.2rem;
+  }
+  
+  #chat-form {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  #user-input, #chat-form button {
+    width: 100%;
+  }
+}
+
+/* Жылтырау эффектісі */
+.message, #chat-form button, header a {
+  position: relative;
+  overflow: hidden;
+}
+
+.message::after, #chat-form button::after, header a::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+  </style>
 </head>
 <body>
   <header>
@@ -29,4 +239,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
