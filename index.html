@@ -3,30 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Чат — Kazakh AI</title>
+  <title>Kazakh AI — Қазақ тіліндегі ақылды көмекші</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Kazakh AI</h1>
-    <a href="index.html" style="color: white; font-size: 0.8rem; text-decoration: none;">← Артқа қайту</a>
-  </header>
-
-  <main>
-    <div class="chat-box" id="chat-box">
-      <div class="message bot">Сәлем! Мен Kazakh AI. Қалай көмектесейін?</div>
+  <!-- Навигация -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-robot"></i>
+        <span>Kazakh AI</span>
+      </div>
+      <a href="chat.html" class="nav-btn">
+        <i class="fas fa-comments"></i> Чатқа өту
+      </a>
     </div>
+  </nav>
 
-    <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Жазыңыз..." autocomplete="off" required />
-      <button type="submit">Жіберу</button>
-    </form>
-  </main>
+  <!-- Hero секция -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-subtitle">Қазақ тіліндегі</span>
+        <span class="hero-main">ақылды AI көмекші</span>
+      </h1>
+      
+      <p class="hero-description">
+        <strong>Kazakh AI</strong> — қазақ тілінде сөйлейтін заманауи жасанды интеллект. 
+        Сұрақтарыңызға жауап алыңыз, ақпарат табыңыз және көмек алыңыз.
+      </p>
+      
+      <div class="hero-actions">
+        <a href="chat.html" class="btn-primary">
+          <i class="fas fa-play-circle"></i> Чатты бастау
+        </a>
+        <a href="#features" class="btn-secondary">
+          <i class="fas fa-info-circle"></i> Толығырақ
+        </a>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stat">
+          <i class="fas fa-bolt"></i>
+          <span>Жылдам жауап</span>
+        </div>
+        <div class="stat">
+          <i class="fas fa-language"></i>
+          <span>Қазақ тілінде</span>
+        </div>
+        <div class="stat">
+          <i class="fas fa-clock"></i>
+          <span>24/7 қолжетімді</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="AI технологиясы">
+    </div>
+  </section>
 
+  <!-- Мүмкіндіктер секциясы -->
+  <section id="features" class="features">
+    <div class="section-header">
+      <h2>Kazakh AI не істей алады?</h2>
+      <p>Біздің AI көмекші сізге күнделікті тапсырмаларда және білім алуда көмектеседі</p>
+    </div>
+    
+    <div class="features-grid">
+      <!-- 1-мүмкіндік -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-question-circle"></i>
+        </div>
+        <h3>Сұрақтарға жауап береді</h3>
+        <p>Кез келген тақырып бойынша сұрақ қойыңыз және қазақ тілінде толық жауап алыңыз</p>
+        <ul class="feature-list">
+          <li><i class="fas fa-check"></i> Ғылым және технология</li>
+          <li><i class="fas fa-check"></i> Білім және білім алу</li>
+          <li><i class="fas fa-check"></i> Күнделікті сұрақтар</li>
+        </ul>
+      </div>
+      
+      <!-- 2-мүмкіндік -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-comments"></i>
+        </div>
+        <h3>Қазақ тілін біледі</h3>
+        <p>Туған тіліңізде еркін сөйлесіңіз — AI қазақ тілін жетік меңгерген</p>
+        <ul class="feature-list">
+          <li><i class="fas fa-check"></i> Әдеби тілде сөйлеу</li>
+          <li><i class="fas fa-check"></i> Диалектілерді түсіну</li>
+          <li><i class="fas fa-check"></i> Дұрыс грамматика</li>
+        </ul>
+      </div>
+      
+      <!-- 3-мүмкіндік -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-hands-helping"></i>
+        </div>
+        <h3>Ақылды көмек көрсетеді</h3>
+        <p>Мәселе шешуде, білім іздеуде және идея табуда сенімді серіктес</p>
+        <ul class="feature-list">
+          <li><i class="fas fa-check"></i> Шешім ұсыну</li>
+          <li><i class="fas fa-check"></i> Ұсыныстар беру</li>
+          <li><i class="fas fa-check"></i> Жобаларда көмек</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Неге біз секциясы -->
+  <section class="why-us">
+    <div class="section-header">
+      <h2>Неге Kazakh AI таңдау керек?</h2>
+      <p>Біздің артықшылықтарымыз</p>
+    </div>
+    
+    <div class="why-grid">
+      <div class="why-item">
+        <i class="fas fa-rocket"></i>
+        <h3>Жылдамдық</h3>
+        <p>Сұрақтарыңызға секундтың ішінде жауап алыңыз</p>
+      </div>
+      
+      <div class="why-item">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Қауіпсіздік</h3>
+        <p>Сіздің деректеріңіз қорғалған және жеке</p>
+      </div>
+      
+      <div class="why-item">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Білімділік</h3>
+        <p>Көптеген салалар бойынша терең білімі бар</p>
+      </div>
+      
+      <div class="why-item">
+        <i class="fas fa-smile"></i>
+        <h3>Қарапайымдылық</h3>
+        <p>Пайдалану оңай, техникалық білім қажет емес</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Чатқа шақыру секциясы -->
+  <section class="cta">
+    <div class="cta-content">
+      <h2>Қазір бастаңыз!</h2>
+      <p>Kazakh AI-мен бірге жаңа мүмкіндіктер әлемін ашыңыз. Тегін және қарапайым.</p>
+      <a href="chat.html" class="btn-primary btn-large">
+        <i class="fas fa-comment-dots"></i> Чатты бастау
+      </a>
+    </div>
+  </section>
+
+  <!-- Футер -->
   <footer>
-    <p>© 2025 Kazakh AI | Ақылды болашаққа бірге</p>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <i class="fas fa-robot"></i>
+        <span>Kazakh AI</span>
+      </div>
+      <p class="footer-tagline">Қазақ тілінде ойлайтын заманауи көмекші</p>
+      
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fas fa-envelope"></i> Email</a>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Kazakh AI | Ақылды болашаққа бірге</p>
+        <p class="footer-note">Барлық құқықтар қорғалған</p>
+      </div>
+    </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
